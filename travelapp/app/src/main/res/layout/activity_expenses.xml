@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Root LinearLayout
+    - Using a very light, slightly blue-gray background for a professional, clean feel.
+    - Increased padding for better whitespace.
+    - Added 'xmlns:app' for MaterialCardView attributes.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F0F4F8"
+    android:padding="20dp">
+
+    <!--
+        Screen Title
+        - Centered the title for a more formal, "dashboard" feel.
+        - Increased text size and used 'sans-serif-medium' for a clean, modern font.
+        - Color is a deep, professional navy blue.
+    -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trip Expenses"
+        android:textSize="28sp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="#1C2B4D"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="24dp"/>
+
+    <!--
+        Hero Card for Total Expenses
+        - This is the centerpiece. A MaterialCardView gives it elevation and a
+          clean, contained look, common in finance apps.
+    -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:contentPadding="24dp">
+
+        <!--
+            Total Expenses TextView
+            - Kept the ID.
+            - This is now inside the card.
+            - Increased text size to make it the "hero" number.
+            - Changed color from 'holo_blue_dark' to the professional navy blue.
+        -->
+        <TextView
+            android:id="@+id/tv_total_expenses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Expenses: ₹0.00"
+            android:textSize="24sp"
+            android:textColor="#1C2B4D"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!--
+        List Header
+        - Added a sub-header to clearly label the list of expenses.
+    -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Expense Log"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="#333333"
+        android:layout_marginBottom="12dp"/>
+
+    <!--
+        List Container
+        - Used a FrameLayout to properly show the 'No trips' message
+          centered in the list area when the list is empty.
+    -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--
+            Expenses RecyclerView
+            - Kept the ID.
+            - Added some padding for better list spacing.
+        -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_expenses"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="16dp"/>
+
+        <!--
+            No Trips Message
+            - Kept the ID and 'gone' visibility.
+            - Styled to be a clear, professional-looking empty-state message.
+        -->
+        <TextView
+            android:id="@+id/tv_no_trips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No trips recorded yet"
+            android:textSize="18sp"
+            android:textColor="#888888"
+            android:visibility="gone"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TravelApp</string>
+
+    <!-- Transport modes array -->
+    <string-array name="transport_modes">
+        <item>Car</item>
+        <item>Train</item>
+        <item>Bus</item>
+        <item>Flight</item>
+        <item>Auto-rickshaw/Cab</item>
+    </string-array>
+</resources>
